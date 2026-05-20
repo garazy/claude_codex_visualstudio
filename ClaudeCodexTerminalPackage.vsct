@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+
+  <Commands package="guidClaudeCodexTerminalPackage">
+    <Groups>
+      <Group guid="guidClaudeCodexTerminalPackageCmdSet" id="ItemNodeGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_ITEMNODE"/>
+      </Group>
+      <Group guid="guidClaudeCodexTerminalPackageCmdSet" id="ProjectNodeGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_PROJNODE"/>
+      </Group>
+    </Groups>
+
+    <Buttons>
+      <Button guid="guidClaudeCodexTerminalPackageCmdSet" id="OpenCodexCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidClaudeCodexTerminalPackageCmdSet" id="ItemNodeGroup" />
+        <Icon guid="guidChatGptImages" id="bmpChatGpt" />
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Codex</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidClaudeCodexTerminalPackageCmdSet" id="OpenClaudeCommandId" priority="0x0101" type="Button">
+        <Parent guid="guidClaudeCodexTerminalPackageCmdSet" id="ItemNodeGroup" />
+        <Icon guid="guidClaudeImages" id="bmpClaude" />
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Claude</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+
+    <Bitmaps>
+      <Bitmap guid="guidChatGptImages" href="resources\chatgpt16.png" usedList="bmpChatGpt" />
+      <Bitmap guid="guidClaudeImages" href="resources\claude.ico" usedList="bmpClaude" />
+    </Bitmaps>
+  </Commands>
+
+  <CommandPlacements>
+    <CommandPlacement guid="guidClaudeCodexTerminalPackageCmdSet" id="OpenCodexCommandId" priority="0x0100">
+      <Parent guid="guidClaudeCodexTerminalPackageCmdSet" id="ProjectNodeGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidClaudeCodexTerminalPackageCmdSet" id="OpenClaudeCommandId" priority="0x0101">
+      <Parent guid="guidClaudeCodexTerminalPackageCmdSet" id="ProjectNodeGroup" />
+    </CommandPlacement>
+  </CommandPlacements>
+
+  <Symbols>
+    <GuidSymbol name="guidClaudeCodexTerminalPackage" value="{d693fa16-4b2f-46af-a9f4-f857c6997603}" />
+    <GuidSymbol name="guidClaudeCodexTerminalPackageCmdSet" value="{91565bab-c358-4427-bfc6-c179a104cfb7}">
+      <IDSymbol name="ItemNodeGroup" value="0x1020" />
+      <IDSymbol name="ProjectNodeGroup" value="0x1021" />
+      <IDSymbol name="OpenCodexCommandId" value="0x0100" />
+      <IDSymbol name="OpenClaudeCommandId" value="0x0101" />
+    </GuidSymbol>
+    <GuidSymbol name="guidChatGptImages" value="{7bd1125c-83ab-4951-8373-a462da788108}">
+      <IDSymbol name="bmpChatGpt" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="guidClaudeImages" value="{cc3fbb6d-35cd-49c7-a007-f3368df6ca54}">
+      <IDSymbol name="bmpClaude" value="1" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
