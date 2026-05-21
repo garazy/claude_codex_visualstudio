@@ -82,6 +82,8 @@ namespace ClaudeCodexTerminal
                     throw new FileNotFoundException("Could not find wt.exe in the current user's WindowsApps folder or under C:\\Program Files\\WindowsApps.");
                 }
 
+                WindowsTerminalProfileManager.EnsureDefaultProfiles();
+
                 var startInfo = new ProcessStartInfo
                 {
                     FileName = wtExe,

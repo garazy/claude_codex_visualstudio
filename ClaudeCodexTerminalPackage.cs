@@ -19,7 +19,19 @@ namespace ClaudeCodexTerminal
         {
             await base.InitializeAsync(cancellationToken, progress);
 
-            _ = Task.Run(() => WindowsTerminalLocator.GetWindowsTerminalPath(), cancellationToken);
+            _ = Task.Run(
+                () =>
+                {
+                    WindowsTerminalLocator.GetWindowsTerminalPath();
+                    try
+                    {
+                        WindowsTerminalProfileManager.EnsureDefaultProfiles();
+                    }
+                    catch
+                    {
+                    }
+                },
+                cancellationToken);
 
             await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
             await OpenTerminalCommand.InitializeAsync(this);

@@ -49,6 +49,7 @@
     <Compile Include="ClaudeCodexTerminalPackage.cs" />
     <Compile Include="OpenTerminalCommand.cs" />
     <Compile Include="SelectionPathResolver.cs" />
+    <Compile Include="WindowsTerminalProfileManager.cs" />
     <Compile Include="WindowsTerminalLocator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -70,6 +71,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.SDK" Version="17.0.32112.339" ExcludeAssets="runtime" />
     <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="17.3.2093" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
   <ItemGroup>
     <VSCTCompile Include="ClaudeCodexTerminalPackage.vsct">
