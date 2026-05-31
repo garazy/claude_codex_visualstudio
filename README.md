@@ -1,3 +1,7 @@
+# Deprecated
+
+This extension is deprecated. Use `super_vs` instead: https://github.com/garazy/super_vs
+
 # Claude Codex Terminal
 
 Visual Studio extension that adds `Codex` and `Claude` commands to Solution Explorer context menus.
